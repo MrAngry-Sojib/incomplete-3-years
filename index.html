@@ -3,365 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incomplete 3 Years</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Hind+Siliguri:wght@300;500;700&family=Playfair+Display:ital,wght=0,600;1,400&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+    <title>Warning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --bg-color: #0d0204;
-            --maroon-gradient: radial-gradient(circle, #3d0a13 0%, #170306 70%, #0d0204 100%);
-            --gold-color: #FFD700;
-            --gold-linear: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-            --text-light: #f5f5f5;
-            --text-muted: #cccccc;
-            --font-bengali: 'Hind Siliguri', sans-serif;
-            --font-english: 'Cinzel', serif;
-            --font-cursive: 'Playfair Display', serif;
-            --font-signature: 'Dancing Script', cursive;
+        /* Google Font for clean look */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* লাক্সারি গোল্ডেন স্ক্রলবার */
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: var(--bg-color); }
-        ::-webkit-scrollbar-thumb { background: var(--gold-linear); border-radius: 10px; }
-
         body {
-            background-color: var(--bg-color);
-            background-image: var(--maroon-gradient);
-            color: var(--text-light);
-            font-family: var(--font-bengali);
-            min-height: 100vh;
+            background-color: #0b0102; /* একদম ডিপ ব্ল্যাকিশ মেরুন ব্যাকগ্রাউন্ড */
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow-x: hidden;
-            position: relative;
+            min-height: 100vh;
+            font-family: 'Noto Serif Bengali', serif;
+            overflow: hidden;
+            perspective: 1000px;
         }
 
-        /* স্টারডাস্ট ব্যাকগ্রাউন্ড */
-        .star {
-            position: absolute; background: white; border-radius: 50%;
-            opacity: 0.3; animation: twinkle 3s infinite ease-in-out; pointer-events: none;
-        }
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.2); filter: blur(1px); }
-        }
-
-        .wrapper { width: 100%; max-width: 550px; padding: 20px; z-index: 10; }
-        
-        .main-card {
-            background: rgba(23, 3, 6, 0.85);
-            border: 1px solid rgba(191, 149, 63, 0.3);
-            box-shadow: 0 0 30px rgba(170, 119, 28, 0.2), inset 0 0 20px rgba(61, 10, 19, 0.6);
-            border-radius: 12px;
-            padding: 40px 30px;
+        /* প্রফেশনাল ও কমপ্যাক্ট ওয়ার্নিং বক্স */
+        .warning-box {
+            background: rgba(12, 2, 4, 0.98);
+            border: 1px solid rgba(255, 255, 255, 0.12); /* প্রফেশনাল স্লিক বর্ডার */
+            padding: 35px 25px;
+            border-radius: 4px; /* শার্প প্রফেশনাল এজ */
             text-align: center;
+            max-width: 420px; /* বক্সের সাইজ ছোট করা হয়েছে */
+            width: 88%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 1px rgba(255, 255, 255, 0.2) inset;
             position: relative;
-            backdrop-filter: blur(10px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* বক্সের ধীরগতির প্রফেশনাল ভাইব্রেশন */
+            animation: boxSlowShake 2s infinite alternate ease-in-out;
         }
-        .main-card::before, .main-card::after {
-            content: ''; position: absolute; width: 20px; height: 20px; border: 1px solid var(--gold-color); pointer-events: none; opacity: 0.5;
-        }
-        .main-card::before { top: 12px; left: 12px; border-right: none; border-bottom: none; }
-        .main-card::after { bottom: 12px; right: 12px; border-left: none; border-top: none; }
-        
-        .gold-gradient-text { background: var(--gold-linear); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
-        
-        .lock-icon-container { color: var(--gold-color); font-size: 2.2rem; margin-bottom: 15px; filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4)); transition: all 0.3s ease; }
-        
-        #lock-screen h2 { font-family: var(--font-english); font-size: 1.6rem; letter-spacing: 3px; margin-bottom: 8px; text-transform: uppercase; }
-        #lock-screen p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 25px; font-weight: 300; }
-        
-        .input-group { position: relative; margin-bottom: 25px; max-width: 320px; margin-left: auto; margin-right: auto; }
-        .input-group input {
-            width: 100%; padding: 14px 45px 14px 20px; background: rgba(13, 2, 4, 0.6); 
-            border: 1px solid rgba(191, 149, 63, 0.4); border-radius: 30px; color: var(--text-light); 
-            font-size: 1rem; text-align: center; outline: none; letter-spacing: 2px; transition: all 0.3s ease;
-        }
-        .input-group input:focus { border-color: var(--gold-color); box-shadow: 0 0 18px rgba(255, 215, 0, 0.4); }
-        
-        .toggle-password {
-            position: absolute; right: 18px; top: 50%; transform: translateY(-50%);
-            color: rgba(191, 149, 63, 0.6); cursor: pointer; font-size: 1rem; transition: color 0.3s ease;
-        }
-        .toggle-password:hover { color: var(--gold-color); }
-        
-        .btn-submit { background: var(--gold-linear); color: #0d0204; border: none; padding: 12px 35px; font-size: 1rem; font-weight: 700; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 15px rgba(170, 119, 28, 0.4); transition: all 0.3s ease; }
-        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); }
-        .error-message { color: #ff4d4d; font-size: 0.9rem; margin-top: 15px; min-height: 20px; opacity: 0; transition: opacity 0.3s ease; }
-        
-        #secret-content { display: none; opacity: 0; text-align: center; transition: opacity 0.8s ease-in-out; }
-        .signature-title { font-family: var(--font-cursive); font-style: italic; font-size: 1.8rem; color: var(--gold-color); margin-bottom: 5px; }
-        .date-badge { font-family: var(--font-english); font-size: 0.9rem; letter-spacing: 2px; color: var(--text-muted); border-bottom: 1px solid rgba(191, 149, 63, 0.2); display: inline-block; padding-bottom: 8px; margin-bottom: 25px; }
-        
-        .letter-box { text-align: left; line-height: 1.8; font-size: 1.05rem; color: #e0e0e0; max-height: 320px; overflow-y: auto; padding-right: 10px; margin-bottom: 20px; font-weight: 300; white-space: pre-wrap; }
-        
-        .letter-footer { margin-top: 15px; padding-bottom: 20px; border-bottom: 1px solid rgba(191, 149, 63, 0.15); opacity: 0; transition: opacity 1.5s ease; }
-        
-        .sincerely-text { font-family: var(--font-english); font-size: 1rem; color: var(--text-muted); letter-spacing: 2px; margin-bottom: 5px; font-weight: 500; }
-        .name-signature { font-family: var(--font-signature); font-size: 2.2rem; background: var(--gold-linear); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
 
-        /* ফটো গ্যালারি সেকশন */
-        .photo-gallery { display: flex; justify-content: center; gap: 30px; margin: 25px 0; }
-        .photo-box { text-align: center; }
-        .profile-img {
-            width: 100px; height: 100px; border-radius: 50%; object-fit: cover;
-            border: 2px solid rgba(191, 149, 63, 0.5);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
-            transition: all 0.5s ease;
+        /* কঙ্কাল লোগো */
+        .icon-container {
+            font-size: 3rem;
+            color: #b3001e; /* একটু ক্লাসি ডার্ক রেড */
+            margin-bottom: 12px;
+            text-shadow: 0 0 10px rgba(179, 0, 30, 0.4);
         }
-        .photo-box p { font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; letter-spacing: 1px; font-weight: 300; }
 
-        .extra-section { display: none; opacity: 0; margin-top: 25px; transition: opacity 1s ease; }
-        .counter-title { font-size: 0.95rem; color: #f5f5f5; margin-bottom: 10px; font-weight: 500; }
-        .timer-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; }
-        .time-box { background: rgba(13, 2, 4, 0.5); border: 1px solid rgba(191, 149, 63, 0.2); padding: 8px 12px; border-radius: 8px; min-width: 65px; }
-        .time-num { font-family: var(--font-english); font-size: 1.2rem; font-weight: 700; color: var(--gold-color); }
-        .time-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
-        
-        .contact-text { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 15px; font-weight: 300; line-height: 1.6; }
-        .social-links { display: flex; justify-content: center; gap: 15px; }
-        
-        .social-btn {
-            display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; 
-            border: 1px solid rgba(191, 149, 63, 0.3); border-radius: 50%; background: rgba(23, 3, 6, 0.6);
-            color: var(--gold-color); font-size: 1.3rem; text-decoration: none; transition: all 0.3s ease;
+        /* হ্যাকিং গ্লিচ হেডলাইন */
+        .warning-title {
+            font-size: 1.8rem;
+            color: #ffffff;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+            opacity: 0.9;
         }
-        .social-btn:hover { background: var(--gold-linear); color: #0d0204; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3); }
 
-        @keyframes shake { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
-        .shake-animation { animation: shake 0.4s ease-in-out; }
-
-        .heart {
-            position: absolute; bottom: -20px; font-size: 20px; color: rgba(191, 149, 63, 0.15);
-            animation: floatUp 6s linear infinite; pointer-events: none; z-index: 1;
+        /* গ্লিচ ইফেক্ট এলিমেন্ট */
+        .warning-title::before,
+        .warning-title::after {
+            content: 'WARNING';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0c0204;
+            font-family: monospace;
         }
-        @keyframes floatUp {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.6; }
-            90% { opacity: 0.6; }
-            100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
+
+        .warning-title::before {
+            left: 2px;
+            text-shadow: -2px 0 #00ff66;
+            clip: rect(10px, 420px, 30px, 0);
+            animation: hack-glitch 3.5s infinite linear alternate-reverse;
+        }
+
+        .warning-title::after {
+            left: -2px;
+            text-shadow: -2px 0 #ff002b;
+            clip: rect(40px, 420px, 60px, 0);
+            animation: hack-glitch 2.5s infinite linear alternate-reverse;
+        }
+
+        /* মূল মেসেজ স্টাইল */
+        .message {
+            color: #b0a4a5; /* একটু ম্লান গ্রে কালার প্রফেশনাল লুকের জন্য */
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .line {
+            opacity: 0;
+            transform: translateY(8px);
+            animation: fadeInLine 0.8s forwards ease-out;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* একটার পর একটা লাইন আসার টাইমিং */
+        .line-1 { animation-delay: 0.8s; }
+        .line-2 { animation-delay: 2.2s; }
+        .line-3 { animation-delay: 3.8s; }
+
+        /* 'R' এর ডার্ক এবং প্রফেশনাল মিনিমাল কালার স্টাইল */
+        .signature {
+            font-size: 1.8rem;
+            color: #5c0000; /* পারফেক্ট ডার্ক ব্লাড-রেড */
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            letter-spacing: 2px;
+            display: block;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeInLine 0.8s forwards ease-out;
+            animation-delay: 5.2s;
+        }
+
+        /* --- অ্যানিমেশন সমূহ --- */
+
+        /* বক্সের খুব সূক্ষ্ম প্রফেশনাল মুভমেন্ট */
+        @keyframes boxSlowShake {
+            0% { transform: translate(0.3px, 0.3px); }
+            50% { transform: translate(-0.3px, 0.3px); }
+            100% { transform: translate(0.3px, -0.3px); }
+        }
+
+        /* সাইবার গ্লিচ */
+        @keyframes hack-glitch {
+            0% { clip: rect(20px, 9999px, 35px, 0); transform: skew(0.1deg); }
+            10% { clip: rect(5px, 9999px, 15px, 0); transform: skew(-0.3deg); }
+            20% { clip: rect(45px, 9999px, 55px, 0); transform: skew(0.5deg); }
+            30% { clip: rect(0px, 9999px, 0px, 0); transform: skew(0deg); }
+            100% { clip: rect(0px, 9999px, 0px, 0); transform: skew(0deg); }
+        }
+
+        /* স্মুথ লাইন ফেড-ইন */
+        @keyframes fadeInLine {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
-<body id="body-particles">
+<body>
 
-    <div class="wrapper">
-        <div class="main-card" id="card-container">
-            <div id="lock-screen">
-                <div class="lock-icon-container" id="padlock">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <h2 class="gold-gradient-text">Incomplete 3 Years</h2>
-                <p>কথাগুলো পড়তে পাসওয়ার্ড দেও</p>
-                <div class="input-group">
-                    <input type="password" id="password-field" placeholder="••••••••" autocomplete="off">
-                    <i class="fas fa-eye-slash toggle-password" id="eye-icon" onclick="togglePasswordVisibility()"></i>
-                </div>
-                <button class="btn-submit" onclick="unlockPage()">অনলক কর</button>
-                <div class="error-message" id="error-msg">ভুল পাসওয়ার্ড! আবার চেষ্টা করো।</div>
-            </div>
-            
-            <div id="secret-content">
-                <div class="signature-title">Incomplete 3 Years</div>
-                <div class="date-badge">02 June, 2026</div>
-                
-                <div class="letter-box" id="typed-letter"></div>
-                
-                <div class="letter-footer" id="letter-sign">
-                    <p class="sincerely-text">Sincerely,</p>
-                    <p class="name-signature">Sojib</p>
-                </div>
-                
-                <div class="extra-section" id="extra-elements">
-                    
-                    <div class="photo-gallery">
-                        <div class="photo-box">
-                            <img src="sojib.jpg" class="profile-img" alt="Sojib">
-                            
-                        </div>
-                        <div class="photo-box">
-                            <img src="rochona.jpg" class="profile-img" alt="Rochona">
-                
-                        </div>
-                    </div>
-
-                    <div class="counter-title">তোমার  সাথে আমার লাস্ট কথা হয়ছে ০৪ ডিসেম্বর ২০২৫ , দেখো আজ কত দিন হচ্ছে তোমার সাথে আমার কথা হয় না 😅 ...</div>
-                    <div class="timer-container">
-                        <div class="time-box"><div class="time-num" id="days">00</div><div class="time-label">দিন</div></div>
-                        <div class="time-box"><div class="time-num" id="hours">00</div><div class="time-label">ঘণ্টা</div></div>
-                        <div class="time-box"><div class="time-num" id="minutes">00</div><div class="time-label">মিনিট</div></div>
-                        <div class="time-box"><div class="time-num" id="seconds">00</div><div class="time-label">সেকেন্ড</div></div>
-                    </div>
-                    
-                    <div class="contact-text">তুমি চাইলে আমার সাথে অন্তত একবার হলেও কথা বলতে পারো , তোমার জন্যে আমার সবকিছু ওপেন আছে । নিচে আমার সাথে কথা বলার সব গুলো মাধ্যম দিয়ে দিছি । মন চাইলে ম্যাসেজ দিতে পরো একদম নির্দ্ধিধায় , আমি আছি তোমার জন্যে অপেক্ষায় সবসময় 😊...</div>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/MrAngry.Sojib.523" class="social-btn" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/mr_angry_sojib?igsh=bHd2cXpzZGc0cm1r" class="social-btn" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/8801645483478" class="social-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                
-            </div>
+    <div class="warning-box">
+        <div class="icon-container">
+            <i class="fa-solid fa-skull-crossbones"></i>
         </div>
-    </div>
-    
-    <script>
-        // পাসওয়ার্ড এখন ছোট হাতের অক্ষরে চেক হবে, তাই এখানে 'kale' রাখা হয়েছে
-        const SECRET_PASSWORD = "kale";
         
-        const textMessage = `প্রিয় রচনা,
-‎
-‎আমাদের শুরুটা হয়েছিল একদম হঠাৎ করেই। তোমার কি মনে পড়ে সেই চাতালের দিনগুলোর কথা? আমি চাতালে আসতাম, তুমিও আসতে।  দুজন দুজনের দিকে তাকাতে তাকাতে কখন যে একটা ভালো লাগা জন্মে গেল, তা আমরা নিজেরাও টের পাইনি। আর সেই ভালো লাগা থেকেই জন্ম নিয়েছিল  ভালোবাসা। তহুরার উসিলায় তোমার কাছাকাছি যাওয়াটা আমার জন্য সহজ হয়েছিল।  ২০২৩ সালের ২ জুন থেকে শুরু হলো আমাদের একসাথে পথচলা, আমাদের গল্প।
-‎
-‎এরপর যখন আমি পাবনা থেকে পুরোপুরি বাড়িতে চলে এলাম, তখন চাতালের সেই আড্ডাগুলো আমাদের জন্য আরও বেশি হয়ে উঠল। প্রতিদিন বিকেলে তোমার মুখটা দেখার যে ব্যাকুলতা আমার ছিল, তা আজও আমার মনে দাগ কেটে আছে। কিন্তু আমাদের এই ঘনঘন দেখা হওয়াটা এলাকার ছোট-বড় সবাই কেমন যেন সন্দেহজনক চোখে দেখতে শুরু করল। আস্তে আস্তে সবার মাঝে জানাজানি হয়ে গেল, একসময় তোমার ফ্যামিলি আর আমার ফ্যামিলি—সবাই সবকিছু জেনে গেল।
-‎
-‎সেই দিনটার কথা আমি কোনোদিন ভুলব না, যেদিন আমাদের কথা বলতে বলতে হঠাৎ করেই তুমি আমাকে আর কল দিলে না। আমার মনের ভেতর একটা  ভয় আর সন্দেহ দানা ঢুকে গিয়েছিল, হয়তো আমাদের কথা সবাই জেনে গেছে। পরদিন তহুরার কাছ থেকে যখন শুনলাম যে আসলেই তোমার ফ্যামিলি সব জেনে গেছে আর তোমাকে প্রচণ্ড চাপের মুখে রেখেছে, তখন বিশ্বাস করো—আমার দম বন্ধ হওয়ার মতো অবস্থা হয়েছিল। একটা দিন তোমার কণ্ঠস্বর না শুনে থাকাটা যে কতটা যন্ত্রণার, তা আমি সেদিন প্রথম বুঝেছিলাম। তোমাকে কত কষ্টের মধ্য দিয়ে যেতে হচ্ছে ভেবে আমার নিজেরও অনেক খারাপ লাগছিল। আমাদের কথা অফ হলো, আমি  অনেক কষ্ট করে নিজের আবেগকে নিয়ন্ত্রণ করেছি এই আশায়—যে আমাদের কথা ঠিকই আবার হবে, শুধু কিছুদিনের অপেক্ষা।
-‎
-‎দীর্ঘ একটা মাসেরও বেশি সময় পর, তুমি যখন আবার আমার সাথে কথা বলা শুরু করলে, তখন থেকে আমার ভালো দিন শুরু হলো। এর মাঝে তুমি এসএসসি পরীক্ষা দিলে, আলহামদুলিল্লাহ অনেক ভালো রেজাল্ট করলে। তুমি যখন মজিবর রহমান মহিলা কলেজে চান্স পেলে আর বগুড়ায় মেসে থাকা শুরু করলে, আমি নিজের সবটুকু দিয়ে চেয়েছিলাম তুমি অনেক পড়াশোনা করো, অনেক দূর যাও। তোমার পাশাপাশি আমিও বগুড়ায় চলে গেলাম, সেখানে মেসে থেকে ক্লাস করা শুরু করলাম যাতে তোমার কাছাকাছি থাকতে পারি। কিন্তু আমার মনের এক কোণে ভয় আর সন্দেহ ছিল যে—বগুড়ায় গিয়ে তুমি হয়তো বদলে যাবে। শেষ পর্যন্ত আমার সেই আশঙ্কাই সত্যি হলো, রচনা...।
-‎
-‎তুমি আমাকে সবসময় বলতে যে, তোমার পরিবার আমাদের এই সম্পর্ক কখনো মানবে না, কিন্তু তুমি আজীবন আমার হয়েই থাকবে। আমিও তোমাকে কথা দিয়েছিলাম, পড়াশোনা শেষ করে নিজের পায়ে দাঁড়িয়ে যখন ভালো কিছু করব, তখন তোমার পরিবার ঠিকই আমাদের মেনে নেবে। তুমিও  আমার সেই কথায় সায় দিয়েছিলে। ২০২৩ থেকে ২০২৪ সাল পর্যন্ত আমাদের সব কিছু কত সুন্দর, কত নিখুঁত ছিল!
-‎
-‎কিন্তু ২০২৫ সালের ফেব্রুয়ারি মাস থেকে তুমি হঠাৎ করেই কেমন যেন বদলে গেলে। কোনো এক অজানা কারণে তুমি আমার সাথে কথা বলা বন্ধ করে দিলে। পুরো দুটো মাস তুমি আমার সাথে কথা বলোনি, এমনকি ঈদের দিনটাতেও তুমি আমার সাথে  কথা বলোনি। কখনো নিজের থেকে জানতে চাওনি আমি কেমন আছি।
-‎
-‎এরপর এলো ২০২৫ সালের ২ জুন—আমাদের সম্পর্কের দ্বিতীয় বছর পূর্তির দিন। সেদিন আবারও তহুরা আমাদের মাঝে দাঁড়িয়েছিল, আমাদের আবার এক করে দিয়েছিল। আমাদের কথা বলা শুরু হলো , কিন্তু তুমি আর আগের সেই রচনা ছিলে না। তুমি প্রতিনিয়ত আমাকে অবহেলা করতে শুরু করলে, ইগনোর করতে শুরু করলে। সবসময় বিভিন্ন অজুহাত দিতে তুমি কথা না বলার জন্য। আমি তোমার সব অজুহাত বুঝতাম, কিন্তু তোমাকে কোনোভাবেই হারাতে চাইনি বলে তুমি যা বলতে আমি সব মেনে নিতাম।
-‎
-‎একসময় তুমি মেস ছেড়ে পুরোপুরি বাড়িতে চলে আসলে।  বাড়িতে আসার পরও তোমার সেই ইগনোর আর অজুহাত একইভাবে চলতে থাকল। সারাদিনে সর্বোচ্চ ১৫-২০ মিনিট কথা বলতে তুমি আমার সাথে। অবশেষে অক্টোবর মাসে আমি বাধ্য হয়ে তোমাকে জিজ্ঞেস করেছিলাম তোমার আসলে কী হয়েছে, আর তোমার অন্য কেও আছে নাকি। তুমি কনফিডেন্সের সাথে বলেছিলে অন্য কেউ নেই, শুধু ফ্যামিলি মানবে না। কিন্তু তুমি কখনো আমাকে পুরোপুরি ক্লিয়ার করে বলোনি যে তুমি আমাকে আর চাও না, আবার আমাকে ভালোও রাখতে না।
-‎
-‎তোমার সাথে আমার শেষ কথা হয়েছিল ২০২৫ সালের ৪ ডিসেম্বর—সেদিন আমার জন্মদিন ছিল। তুমি রাতে আমাকে উইশ করেছিলে। আমি তোমাকে বলেছিলাম দিনের বেলা ফোন দিতে আর ক্লিয়ারলি বলতে তুমি আসলে আমাকে চাও কি না। কিন্তু দুঃখের বিষয় হলো, আমি আর তোমার থেকে কোনো ফোন পাইনি ওইদিন। আমি রাগ করে তোমাকে ব্লক করে দিয়েছিলাম। ৪ তারিখ বৃস্পতিবার এর  পর তুমি সরাসরি সোমবার আমাকে কল দিয়েছিলে, ব্লক লিস্টে তোমার কল দেখেছিলাম কিন্তু আমি কোনো রেসপন্স করিনি।
-‎
-‎এরপর আস্তে আস্তে আমি তোমার পেছনের সব সত্য জেনে যাই, যা আমি আগেই সন্দেহ করছিলাম। সবচেয়ে বড় দুঃখের বিষয় এটাই যে, তুমি আজ পর্যন্ত কোনোদিন নিজে এসে কোনো বিষয়ে কথা বললে না, এমনকি আমাদের সম্পর্কটার একটা ব্রেকআপ পর্যন্ত করলে না। হঠাৎ করেই কেন জানি আমাদের কথা বলা বন্ধ হয়ে গেল। এত কিছুর পর তুমি একটা দিন আমার খোঁজ নিলে না—এটা খুবই কষ্টের ছিল আমার জন্য।
-‎
-‎তোমার সাথে আমার কত কথা বলার ছিল, কত স্মৃতি জমা হয়ে আছে, যা তোমাকে আর বলাই হলো না। সব কথা নিজের ভিতরে জমা করে রাখছি। আজও আমি তোমাকে সব কথা বলতে পারছি না কারণ তোমাকে বলার মতো এত কথা জমা আছে যা একদিনে শেষ করা সম্ভব না। তুমি মানুষের কাছে আমাকে যতটাই খারাপ করে দেখাও না কেন, বিশ্বাস করো আমি অতটা খারাপ ছিলাম না। তুমি আমাদের সব স্মৃতি এত সহজে ভুলে যেতে পারলে? অথচ দেখো, আমি আজও নিজের জীবন নিয়ে আটকে গেছি সেইসব পুরনো স্মৃতি নিয়ে।
-‎
-‎আমি চাই তুমি ভালো থাকো সবসময় , অনেক সুখে থাকো। আমার বেশি খারাপ লাগে যে তুমি কখনো নিজে থেকে একটু কথা বলতে আসলে না। আমি বাইরে নিজেকে যেমনই দেখাই না কেন, তুমি যদি একবার আমার সাথে কথা বলতে আসতে, আমি সব ভুলে তোমার সাথে খুব ভালোভাবে কথা বলতাম। যদিও আমি জানি তুমি আজ আর আমার নও, আর তুমি যে আমার নও—সেই সীমাবদ্ধতাটুকু বজায় রেখেই আমি তোমার সাথে কথা বলতাম। তুমি চাইলে অন্তত ফ্রেন্ডলি ভাবে আমার সাথে কথা বলতে পারতে।
-‎
-‎
-‎আমি তোমার জন্য দোয়া করি তুমি সবসময় সুখে থাকো। আমি চাই—তুমি আমার সাথে আর একবার অন্তত কথা বলো। আমি কোনো কিছু মনে রাখব না, খুব ভালোভাবে তোমার সাথে কথা বলবো । 
-‎
-‎তুমি খুব ভালো করেই জানো আমাদের শুরু থেকে শেষ পর্যন্ত সব কিছু , আমাকে নতুন করে কিছুই বলতে হবে না।  আমি সবকিছু ভালো ভাবে বলতে পারি নি কারন আমি ওই মেন্টাল হেলথে নাই , সব কথা গুলো বুঝে নিও। আর এখানে ব্যবহার করা কোনো পিক বা কোনো কথা পাবলিক হবে না বা অন্য কেও দেখতে পারবে না কারন এই পেজে আসতে গেলে পাসওয়ার্ড দিয়ে আসা লাগবে আর এই পাসওয়ার্ড টা শুধু তুমি জানবে অন্য কেও না , তুমি যদি কারো কাছে এই ওয়েবসাইটের লিংক সিয়ার করো আর তাকে পাসওয়ার্ড দেও তখনই সে এই পেজ অব্দি আসতে পাবে । তোমাকে  শুধু  এই কথা গুলো বলার জন্যে আমার এই ওয়েবসাইটা বানানো । `;
+        <h1 class="warning-title">WARNING</h1>
+        
+        <p class="message">
+            <span class="line line-1">"ভুলটা তুমি জেনেশুনেই করেছ।</span>
+            <span class="line line-2">এখন শুধু নীরবতা উপভোগ করো, কারণ ঝড়ের আগের সময়টা এমনই শান্ত থাকে।</span>
+            <span class="line line-3">সময়ের জন্য অপেক্ষা করো, নিজের ভুলের মাশুল দেওয়ার জন্য প্রস্তুতি নাও।"</span>
+        </p>
+        
+        <span class="signature">R</span>
+    </div>
 
-        function createStars() {
-            const body = document.getElementById("body-particles");
-            for (let i = 0; i < 50; i++) {
-                const star = document.createElement("div");
-                star.classList.add("star");
-                const size = Math.random() * 3 + 1 + "px";
-                star.style.width = size;
-                star.style.height = size;
-                star.style.left = Math.random() * 100 + "vw";
-                star.style.top = Math.random() * 100 + "vh";
-                star.style.animationDelay = Math.random() * 3 + "s";
-                body.appendChild(star);
-            }
-        }
-        createStars();
-
-        document.getElementById("password-field").addEventListener("keyup", function(event) {
-            if (event.key === "Enter") { unlockPage(); }
-        });
-
-        function togglePasswordVisibility() {
-            const passwordField = document.getElementById("password-field");
-            const eyeIcon = document.getElementById("eye-icon");
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-                eyeIcon.classList.remove("fa-eye-slash");
-                eyeIcon.classList.add("fa-eye");
-            } else {
-                passwordField.type = "password";
-                eyeIcon.classList.remove("fa-eye");
-                eyeIcon.classList.add("fa-eye-slash");
-            }
-        }
-
-        function createHearts() {
-            setInterval(() => {
-                const heart = document.createElement("div");
-                heart.classList.add("heart");
-                heart.innerHTML = "♥";
-                heart.style.left = Math.random() * 100 + "vw";
-                heart.style.animationDuration = Math.random() * 3 + 4 + "s";
-                heart.style.fontSize = Math.random() * 15 + 15 + "px";
-                document.body.appendChild(heart);
-                setTimeout(() => { heart.remove(); }, 7000);
-            }, 800);
-        }
-
-        function startLiveCounter() {
-            const startDate = new Date("December 4, 2025 00:00:00").getTime();
-            setInterval(() => {
-                const now = new Date().getTime();
-                const difference = now - startDate;
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
-            }, 1000);
-        }
-
-        function typeWriter(text, i, fnCallback) {
-            if (i < text.length) {
-                document.getElementById("typed-letter").innerHTML = text.substring(0, i + 1);
-                const box = document.getElementById("typed-letter");
-                box.scrollTop = box.scrollHeight;
-                setTimeout(function() {
-                    typeWriter(text, i + 1, fnCallback)
-                }, 80);
-            } else if (typeof fnCallback == 'function') {
-                setTimeout(fnCallback, 500);
-            }
-        }
-
-        function unlockPage() {
-            // .toLowerCase() এবং .trim() দিয়ে ছোট হাতের অক্ষর ও অতিরিক্ত স্পেস ফিক্স করা হলো
-            const passwordInput = document.getElementById("password-field").value.trim().toLowerCase();
-            const errorMsg = document.getElementById("error-msg");
-            const cardContainer = document.getElementById("card-container");
-            const lockScreen = document.getElementById("lock-screen");
-            const secretContent = document.getElementById("secret-content");
-            const padlock = document.getElementById("padlock");
-            
-            if (passwordInput === SECRET_PASSWORD) {
-                errorMsg.style.opacity = "0";
-                padlock.innerHTML = '<i class="fas fa-lock-open"></i>';
-                createHearts();
-                startLiveCounter();
-                
-                lockScreen.style.transition = "opacity 0.4s ease";
-                lockScreen.style.opacity = "0";
-                setTimeout(() => {
-                    lockScreen.style.display = "none";
-                    secretContent.style.display = "block";
-                    setTimeout(() => { secretContent.style.opacity = "1"; }, 50);
-                    
-                    setTimeout(() => {
-                        typeWriter(textMessage, 0, function(){
-                            document.getElementById("letter-sign").style.opacity = "1";
-                            const extraSection = document.getElementById("extra-elements");
-                            extraSection.style.display = "block";
-                            setTimeout(() => { extraSection.style.opacity = "1"; }, 1000);
-                        });
-                    }, 500);
-                }, 400);
-            } else {
-                errorMsg.style.opacity = "1";
-                cardContainer.classList.add("shake-animation");
-                setTimeout(() => { cardContainer.classList.remove("shake-animation"); }, 400);
-            }
-        }
-    </script>
 </body>
 </html>
